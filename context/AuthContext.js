@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
         const storedSessions = await AsyncStorage.getItem('sessions');
         let loadedSessions = storedSessions ? JSON.parse(storedSessions) : [];
 
-        // Auto-generate repeated sessions
+        
         loadedSessions = generateRepeatedSessions(loadedSessions);
 
         setSessions(sortSessionsByDateTime(loadedSessions));
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
     setUserData(user);
     setUserToken('dummy-token');
     await requestNotificationPermission();
-    await scheduleDailyReminder(); // default 9:00 AM
+    await scheduleDailyReminder(); 
   };
 
   const logout = async () => {
@@ -126,7 +126,7 @@ export const AuthProvider = ({ children }) => {
   
   const generateRepeatedSessions = (allSessions) => {
     const today = getTodayDate();
-    const todayDay = new Date().getDay(); // 0 = Sun ... 6 = Sat
+    const todayDay = new Date().getDay(); 
 
     const alreadyExists = (subj, time) =>
       allSessions.some(s => s.date === today && s.subject === subj && s.time === time);
@@ -150,7 +150,7 @@ export const AuthProvider = ({ children }) => {
   const sameDay = (dateStr1, dateStr2) => {
     const d1 = new Date(dateStr1);
     const d2 = new Date(dateStr2);
-    return d1.getDay() === d2.getDay(); // Match weekly
+    return d1.getDay() === d2.getDay(); 
   };
 
   return (

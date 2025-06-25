@@ -63,7 +63,7 @@ export default function SignupScreen({ navigation }) {
     const newUser = { name, email, password };
     await AsyncStorage.setItem('user', JSON.stringify(newUser));
 
-    // 🚨 Clear remembered credentials
+    
     await AsyncStorage.removeItem('rememberMe');
     await AsyncStorage.removeItem('rememberedEmail');
     await AsyncStorage.removeItem('rememberedPassword');

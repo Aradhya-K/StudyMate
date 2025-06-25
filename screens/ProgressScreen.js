@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { AuthContext } from '../context/AuthContext'; // Adjust import path if needed
+import { AuthContext } from '../context/AuthContext';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '@react-navigation/native';
 
-// If you want charts, you can add react-native-chart-kit, but here we do simple stats
+
 
 const ProgressScreen = () => {
   const { sessions } = useContext(AuthContext);
-  const { colors } = useTheme(); // Assuming you keep sessions in AuthContext or replace accordingly
+  const { colors } = useTheme();
   const [stats, setStats] = useState({
     totalSessionsToday: 0,
     completedSessionsToday: 0,
@@ -23,12 +23,12 @@ const ProgressScreen = () => {
 
   if (sessions && sessions.length > 0) {
     sessions.forEach(session => {
-      const sessionDate = session.date?.slice(0, 10); // Normalize format
+      const sessionDate = session.date?.slice(0, 10);
       if (sessionDate === today) {
         totalSessions++;
         if (session.completed === true) {
           completedSessions++;
-          totalMinutes += session.minutes || 0; // ← FIXED: use 'minutes'
+          totalMinutes += session.minutes || 0; 
         }
       }
     });
@@ -61,7 +61,7 @@ const ProgressScreen = () => {
         <Text style={styles.statValue}>{stats.totalMinutesStudiedToday}</Text>
       </View>
 
-      {/* Add charts or other visuals here if you want */}
+      
     </SafeAreaView>
   );
 };

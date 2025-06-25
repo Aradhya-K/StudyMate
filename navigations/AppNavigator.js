@@ -18,7 +18,7 @@ const Stack = createStackNavigator();
 
 export default function AppNavigator() {
   const { userToken } = useContext(AuthContext);
-  const { theme } = useContext(ThemeContext); // ✅ Now inside component
+  const { theme } = useContext(ThemeContext);
   const systemTheme = useColorScheme();
 
   const selectedTheme =

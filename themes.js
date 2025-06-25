@@ -9,7 +9,7 @@ export const lightTheme = {
     notification: '#2E54E8',
   },
   fonts: {
-    bold: 'bold', // Add this line
+    bold: 'bold',
   },
 };
 
@@ -24,6 +24,6 @@ export const darkTheme = {
     notification: '#BB86FC',
   },
   fonts: {
-    bold: 'bold', // Add this line
+    bold: 'bold',
   },
 };

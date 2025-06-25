@@ -40,7 +40,6 @@ export default function LoginScreen({ navigation }) {
       }
     }
 
-    // If rememberMe was false or no data
     setEmail('');
     setPassword('');
     setRememberMe(false);

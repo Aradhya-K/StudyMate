@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ThemeContext } from '../context/ThemeContext'; // ✅ Make sure this is correct
+import { ThemeContext } from '../context/ThemeContext';
 
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';

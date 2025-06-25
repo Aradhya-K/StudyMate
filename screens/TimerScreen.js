@@ -26,7 +26,7 @@ export default function TimerScreen() {
     }
 
     if (secondsLeft === 0 && isRunning) {
-      handleCompletion(); // auto complete
+      handleCompletion(); 
     }
 
     return () => clearInterval(intervalRef.current);

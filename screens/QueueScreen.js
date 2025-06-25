@@ -76,13 +76,13 @@ export default function QueueScreen() {
       duration: duration.trim(),
       time: time.trim(),
       minutes: durationInMin,
-      repeat, // 'none' | 'daily' | 'weekly'
+      repeat, 
     };
 
     addSession(newSession);
     Platform.OS === 'android' && ToastAndroid.show('Session added!', ToastAndroid.SHORT);
 
-    // Clear inputs
+    
     setSubject('');
     setDuration('');
     setTime('');
