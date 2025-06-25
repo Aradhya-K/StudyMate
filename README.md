@@ -2,6 +2,63 @@
 
 Welcome to StudyMate, a React Native app designed to help students effectively plan, track, and enhance their study sessions with real-time goal tracking, quizzes, reminders, notes, dark mode, and more.
 
+
+
+## 📱 App Screenshots
+
+### 🔐 Login Screen
+![Login](./assets/screenshots/login.png)
+
+### 🏠 Signup Screen
+![Signup](./assets/screenshots/signup.png)
+
+### 🏠 Home Screen
+![Home](./assets/screenshots/home.png)
+
+### 🏠 Queue Screen
+![Queue](./assets/screenshots/queue.png)
+
+### 🏠 Progress Screen
+![Progress](./assets/screenshots/progress.png)
+
+### 🏠 Quiz Screen
+![Quiz](./assets/screenshots/quiz.png)
+
+### 🏠 Note Screen
+![Notes](./assets/screenshots/notes.png)
+
+### 👤 Profile Screen
+![Profile](./assets/screenshots/profile.png)
+
+### 🏠 Home Screen
+![Home](./assets/screenshots/home2.png)
+
+### 🏠 Queue Screen
+![Queue](./assets/screenshots/queue2.png)
+
+### 🏠 Progress Screen
+![Progress](./assets/screenshots/progress2.png)
+
+### 🏠 Quiz Screen
+![Quiz](./assets/screenshots/quiz2.png)
+
+### 🏠 Note Screen
+![Notes](./assets/screenshots/note2.png)
+
+### 👤 Profile Screen
+![Profile](./assets/screenshots/profile2.png)
+
+
+### 👤 Dark mode Screen
+![Profile](./assets/screenshots/darkmode.png)
+
+## 📽️ App Demo
+
+[▶️ Watch Demo on Google Drive](https://drive.google.com/file/d/1yJqN5N2q02kPBNz45YUfQY7diQAF8dmX/view?usp=sharing)
+
+
+
+
 🚀 Features
 
 ✅ Core Features
