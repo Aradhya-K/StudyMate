@@ -36,6 +36,42 @@ export const AuthProvider = ({ children }) => {
     loadData();
   }, []);
 
+
+//   useEffect(() => {
+//   const loadData = async () => {
+//     try {
+//       const storedUser = await AsyncStorage.getItem('user');
+//       if (!storedUser) {
+//         const demoUser = {
+//           name: 'Demo User',
+//           email: 'demo@example.com',
+//           password: 'demo123',
+//         };
+//         await AsyncStorage.setItem('user', JSON.stringify(demoUser));
+//       }
+
+//       const loadedUser = await AsyncStorage.getItem('user');
+//       if (loadedUser) {
+//         setUserData(JSON.parse(loadedUser));
+//         setUserToken('dummy-token');
+//       } else {
+//         setUserToken(null);
+//       }
+
+//       const storedSessions = await AsyncStorage.getItem('sessions');
+//       let loadedSessions = storedSessions ? JSON.parse(storedSessions) : [];
+
+//       loadedSessions = generateRepeatedSessions(loadedSessions);
+//       setSessions(sortSessionsByDateTime(loadedSessions));
+//     } catch (e) {
+//       console.log('Load error:', e);
+//       setUserToken(null);
+//     }
+//   };
+
+//   loadData();
+// }, []);
+
   useEffect(() => {
     AsyncStorage.setItem('sessions', JSON.stringify(sessions)).catch(e =>
       console.log('Save sessions error:', e)
