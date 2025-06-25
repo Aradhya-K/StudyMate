@@ -68,9 +68,9 @@ export default function SignupScreen({ navigation }) {
     await AsyncStorage.removeItem('rememberedEmail');
     await AsyncStorage.removeItem('rememberedPassword');
 
-    Alert.alert('Account Created', 'Account Created Successfully', [
-      { text: 'OK', onPress: () => navigation.navigate('Login') },
-    ]);
+    alert('Account Created Successfully');
+    navigation.navigate('Login');
+
   } catch (e) {
     console.log('Signup error:', e);
     setSignupError('Something went wrong. Please try again.');

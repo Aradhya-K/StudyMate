@@ -1,13 +1,7 @@
 import React, { useState, useContext } from 'react';
 import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Alert,
-  ToastAndroid,
-  Platform,
+  View, Text, TextInput, TouchableOpacity,
+  StyleSheet, Alert, ToastAndroid, Platform
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { AuthContext } from '../context/AuthContext';
@@ -64,39 +58,42 @@ export default function QueueScreen() {
     }
 
     if (isTimeConflict(time)) {
-      Alert.alert(
-        'Time Conflict',
-        `You already have a session scheduled at ${time.trim()}.`
-      );
+      Alert.alert('Time Conflict', `You already have a session scheduled at ${time.trim()}.`);
       return;
     }
 
+    const today = new Date().toISOString().split('T')[0];
     const newSession = {
       subject: subject.trim(),
       duration: duration.trim(),
       time: time.trim(),
       minutes: durationInMin,
-      repeat, 
+      repeat,
+      date: today,
+      completed: false,
     };
 
     addSession(newSession);
     Platform.OS === 'android' && ToastAndroid.show('Session added!', ToastAndroid.SHORT);
 
-    
+    // Clear input
     setSubject('');
     setDuration('');
     setTime('');
     setRepeat('none');
-    navigation.goBack();
+
+    // Navigate to Home
+    navigation.navigate('Home');
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Plan a Study Session</Text>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
+      <Text style={[styles.title, { color: colors.text }]}>Plan a Study Session</Text>
 
       <TextInput
         style={styles.input}
         placeholder="Subject"
+        placeholderTextColor="#999"
         value={subject}
         onChangeText={setSubject}
       />
@@ -104,6 +101,7 @@ export default function QueueScreen() {
       <TextInput
         style={styles.input}
         placeholder="Duration (e.g. 45 mins or 1.5 hours)"
+        placeholderTextColor="#999"
         value={duration}
         onChangeText={setDuration}
       />
@@ -111,15 +109,16 @@ export default function QueueScreen() {
       <TextInput
         style={styles.input}
         placeholder="Time (e.g. 4:00 PM)"
+        placeholderTextColor="#999"
         value={time}
         onChangeText={setTime}
       />
 
-      <Text style={styles.label}>Repeat</Text>
+      <Text style={[styles.label, { color: colors.text }]}>Repeat</Text>
       <View style={styles.pickerContainer}>
         <Picker
           selectedValue={repeat}
-          onValueChange={(itemValue) => setRepeat(itemValue)}
+          onValueChange={setRepeat}
           style={styles.picker}
         >
           <Picker.Item label="None" value="none" />
@@ -136,8 +135,8 @@ export default function QueueScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#f7f7ff' },
-  title: { fontSize: 20, fontWeight: 'bold', marginBottom: 20, color: '#2E54E8' },
+  container: { flex: 1, padding: 20 },
+  title: { fontSize: 20, fontWeight: 'bold', marginBottom: 20 },
   input: {
     borderWidth: 1,
     borderColor: '#ccc',
@@ -145,12 +144,12 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 16,
     backgroundColor: '#fff',
+    color: '#000',
   },
   label: {
     fontSize: 16,
     fontWeight: '500',
     marginBottom: 6,
-    color: '#444',
     marginTop: 10,
   },
   pickerContainer: {
@@ -172,5 +171,6 @@ const styles = StyleSheet.create({
   },
   buttonText: { color: 'white', fontWeight: 'bold' },
 });
+
 
 
