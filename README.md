@@ -140,9 +140,6 @@ StudyMate/
 └── utils/
     └── AuthService.js
 
-🖼️ Screenshots
-
-Add screenshots of Home, Progress, Timer, and Quiz screens here
 
 📄 How to Run
 
